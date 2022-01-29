@@ -62,7 +62,8 @@ jobs:
           os: "linux"
       - terraform/init:
           path: ./terraform/ecs
-      - terraform/plan:
+      - run:
+          name: Terraform plan
           command: |
             terraform -chdir=./terraform/ecs plan -out=
       - run:
