@@ -64,6 +64,9 @@ jobs:
           path: ./terraform/ecs
       - terraform/plan:
           path: ./terraform/ecs
+          command: |
+            terraform -chdir=./terraform/ecs plan \
+              -out= 
       - run:
           name: Terraform apply
           command: |
