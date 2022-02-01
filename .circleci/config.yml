@@ -65,9 +65,7 @@ jobs:
       - run:
           name: Terraform plan
           command: |
-            terraform -chdir=./terraform/ecs plan -out= \
-              -var docker_img_name=${DOCKER_LOGIN}/${CIRCLE_PROJECT_REPONAME} \
-              -var docker_img_tag=0.1.<< pipeline.number >>
+            terraform -chdir=./terraform/ecs plan -out= 
       - run:
           name: Terraform apply
           command: |
